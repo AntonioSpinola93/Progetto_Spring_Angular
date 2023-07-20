@@ -12,6 +12,8 @@ public class Fattura {
     
     private String numero;
     
+    private Long totale;
+    
     @ManyToOne
     @JoinColumn(name = "utente_id")
     private Utente utente;

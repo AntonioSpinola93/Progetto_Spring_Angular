@@ -13,8 +13,12 @@ public interface FatturaRepository extends JpaRepository<Fattura, Long> {
 	/*@Query("SELECT f FROM Fattura f JOIN f.statoFattura sf WHERE sf.stato = :stato")
 	List<Fattura> findFattureByStato(@Param("stato") String stato);
 
-
+	
     @Query("SELECT f FROM Fattura f WHERE f.stato = :stato")
     List<Fattura> findAllByStato(@Param("stato") String stato);
 */
+	
+    @Query("SELECT SUM(f.totale) FROM Fattura f WHERE f.utente.id = :userId")
+    Long getTotalFattureForUser(@Param("userId") Long userId);
+	
 }
