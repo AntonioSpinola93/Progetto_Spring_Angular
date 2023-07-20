@@ -23,6 +23,9 @@
         <a routerLink="logout" class="nav-link">Effettua il logout</a>
       </li>
       <li class="nav-item" *ngIf="loginStatus === 'success' || LogCash === 'success'">
+        <a routerLink="fattura" class="nav-link">Crea una fattura</a>
+      </li>
+      <li class="nav-item" *ngIf="loginStatus === 'success' || LogCash === 'success'">
         <a routerLink="ChatGpt" class="nav-link">Chat Gpt</a>
       </li>
     </div>

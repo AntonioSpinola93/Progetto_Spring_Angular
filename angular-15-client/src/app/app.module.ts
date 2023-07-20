@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { NomeComponenteComponent } from './nome-componente/nome-componente.component';
 import { LogOutComponent } from './log-out/log-out.component';
 import { TextGenerationComponent } from './text-generation/text-generation.component';
+import { FatturaComponent } from './fattura/fattura.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TextGenerationComponent } from './text-generation/text-generation.compo
     LoginComponent,
     NomeComponenteComponent,
     LogOutComponent,
-    TextGenerationComponent
+    TextGenerationComponent,
+    FatturaComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.com
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactListComponentComponent } from './contact-list-component/contact-list.component';
 import { LoginComponent } from './login/login.component';
+import { FatturaComponent } from './fattura/fattura.component';
 import { LogOutComponent } from './log-out/log-out.component';
 import { TextGenerationComponent } from './text-generation/text-generation.component';
 const routes: Routes = [
@@ -18,6 +19,8 @@ const routes: Routes = [
 { path: 'contact', component: ContactFormComponent },
 { path: 'requests', component: ContactListComponentComponent },
 { path: 'login', component: LoginComponent }, // Aggiunto percorso per LoginComponent
+{ path: 'fattura', component: FatturaComponent }, // Aggiunto percorso per LoginComponent
+
 { path: 'logout', component: LogOutComponent },
 { path: 'ChatGpt', component: TextGenerationComponent },
 ];
