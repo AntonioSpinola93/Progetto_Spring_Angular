@@ -1,0 +1,35 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark">
+  
+    <!-- Contenuto della barra di navigazione -->
+    <a href="#" class="navbar-brand">Alessandro Angular</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="login" class="nav-link" *ngIf="loginStatus !== 'success' || LogCash !== 'success'">Effettua il login</a>
+      </li>
+      <li class="nav-item" *ngIf="loginStatus === 'success' || LogCash === 'success'">
+        <a routerLink="tutorials" class="nav-link">Visualizza note</a>
+      </li>
+      <li class="nav-item" *ngIf="loginStatus === 'success' || LogCash === 'success'">
+        <a routerLink="add" class="nav-link">Aggiungi note</a>
+      </li>
+      <li class="nav-item" *ngIf="loginStatus === 'success' || LogCash === 'success'">
+        <a routerLink="contact" class="nav-link">Compila il form</a>
+      </li>
+      <li class="nav-item" *ngIf="loginStatus === 'success' || LogCash === 'success'">
+        <a routerLink="requests" class="nav-link">Effettua una ricerca</a>
+      </li>
+      <li class="nav-item" *ngIf="loginStatus === 'success' || LogCash === 'success'">
+        <a routerLink="logout" class="nav-link">Effettua il logout</a>
+      </li>
+      <li class="nav-item" *ngIf="loginStatus === 'success' || LogCash === 'success'">
+        <a routerLink="ChatGpt" class="nav-link">Chat Gpt</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

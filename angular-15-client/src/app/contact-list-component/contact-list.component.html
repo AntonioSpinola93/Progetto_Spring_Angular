@@ -1,0 +1,43 @@
+<form (ngSubmit)="submitForm()" #contactForm="ngForm" class="contact-form">
+
+  <button type="submit" [disabled]="!contactForm.form.valid" class="btn btn-primary">Effettua la ricerca completa</button>
+</form>
+
+<!-- Aggiungi qui il campo di ricerca per nome ed email -->
+<div>
+  <label for="searchNome">Cerca per Nome:</label>
+  <input type="text" id="searchNome" name="searchNome" [(ngModel)]="nome">
+</div>
+
+<div>
+  <label for="searchEmail">Cerca per Email:</label>
+  <input type="text" id="searchEmail" name="searchEmail" [(ngModel)]="email">
+</div>
+
+<button (click)="searchContacts()" class="btn btn-primary">Effettua una ricerca filtrata</button>
+
+<!-- Mostra la lista dei contatti -->
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Messaggio</th>
+    <th>Sesso</th>
+    <th>Data di Nascita</th>
+    <th>Codice Fiscale</th>
+    <th>Azioni</th> <!-- Aggiunto il campo per le azioni -->
+  </tr>
+  <tr *ngFor="let contact of filteredContacts">
+    <td>{{ contact.id }}</td>
+    <td>{{ contact.name }}</td>
+    <td>{{ contact.email }}</td>
+    <td>{{ contact.message }}</td>
+    <td>{{ contact.sesso }}</td>
+    <td>{{ contact.dataDiNascita }}</td>
+    <td>{{ contact.codiceFiscale }}</td>
+    <td>
+      <button (click)="deleteContact(contact.id)" class="btn btn-danger">Elimina</button>
+    </td>
+  </tr>
+</table>
