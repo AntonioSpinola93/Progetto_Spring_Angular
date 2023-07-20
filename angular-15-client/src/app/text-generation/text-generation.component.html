@@ -1,0 +1,6 @@
+<div>
+    <textarea [(ngModel)]="inputText" placeholder="Inserisci del testo"></textarea>
+    <button (click)="generateText()">Genera</button>
+    <div class="response" *ngIf="response">{{ response }}</div>
+  </div>
+  
