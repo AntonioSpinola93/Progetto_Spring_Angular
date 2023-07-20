@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/api'; // Update the URL to include the port
+  private apiUrl = 'http://localhost:8080/api'; // Update the URL to ddd the port
 
   constructor(private http: HttpClient) { }
 
