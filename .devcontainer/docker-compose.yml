@@ -12,15 +12,16 @@ services:
     networks:
       - oauth2_network
 
-networks:
-  oauth2_network:
-    driver: bridge
-
   dev:
     image: mcr.microsoft.com/devcontainers/java:17-bullseye
     volumes:
-      - .:/workspace
+      - ..:/workspace:cached
     networks:
       - oauth2_network
     depends_on:
       - db
+    command: sleep infinity
+
+networks:
+  oauth2_network:
+    driver: bridge

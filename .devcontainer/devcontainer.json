@@ -1,18 +1,21 @@
 {
-  "name": "My Java Project with PostgreSQL and Node.js",
-  "dockerComposeFile": "./docker-compose.yml",
+  "name": "Spring + PostgreSQL Dev",
+  "dockerComposeFile": ["docker-compose.yml"],
   "service": "dev",
   "workspaceFolder": "/workspace",
   "extensions": [
+    "vscjava.vscode-java-pack",
     "ms-azuretools.vscode-docker",
-    "vscjava.vscode-spring-initializr",
-    "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode"
   ],
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "18"
-    }
+  "settings": {
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-17",
+        "path": "/usr/local/sdkman/candidates/java/current",
+        "default": true
+      }
+    ]
   },
-  "postCreateCommand": "echo 'Dev container ready.'"
+  "postCreateCommand": "echo 'Ambiente pronto!'"
 }
