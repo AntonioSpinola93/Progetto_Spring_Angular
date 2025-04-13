@@ -1,0 +1,21 @@
+{
+  "name": "Spring + PostgreSQL Dev",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "extensions": [
+    "vscjava.vscode-java-pack",
+    "ms-azuretools.vscode-docker",
+    "esbenp.prettier-vscode"
+  ],
+  "settings": {
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-17",
+        "path": "/usr/local/sdkman/candidates/java/current",
+        "default": true
+      }
+    ]
+  },
+  "postCreateCommand": "echo 'Ambiente pronto!'"
+}

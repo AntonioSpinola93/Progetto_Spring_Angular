@@ -19,7 +19,7 @@ public class Contatto {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User user;
+    private Utente utente;
 
     public Contatto() {
     }
@@ -101,12 +101,12 @@ public class Contatto {
         this.numeroContattiInseriti = numeroContattiInseriti;
     }
 
-    public User getUser() {
-        return user;
+    public Utente getUser() {
+        return utente;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(Utente user) {
+        this.utente = utente;
     }
 
     @Override

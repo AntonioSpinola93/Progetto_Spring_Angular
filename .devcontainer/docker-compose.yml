@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: oauth2db
+    ports:
+      - "5432:5432"
+    networks:
+      - oauth2_network
+
+  dev:
+    image: mcr.microsoft.com/devcontainers/java:17-bullseye
+    volumes:
+      - ..:/workspace:cached
+    networks:
+      - oauth2_network
+    depends_on:
+      - db
+    command: sleep infinity
+
+networks:
+  oauth2_network:
+    driver: bridge

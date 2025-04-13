@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bezkoder</groupId>
-    <artifactId>spring-boot-data-jpa</artifactId>
+    <artifactId>sprinfg-boot-data-jpa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-data-jpa</name>
     <description>Demo project for Spring Boot Apis CRUD using Spring Data JPA</description>
@@ -23,7 +23,12 @@
 
     <dependencies>
 
-       
+       <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.6.0</version> <!-- o l'ultima disponibile -->
+</dependency>
+
 
         <!-- Dipendenze per Keycloak 
         <dependency>
