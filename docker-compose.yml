@@ -15,3 +15,12 @@ services:
 networks:
   oauth2_network:
     driver: bridge
+
+  dev:
+    image: mcr.microsoft.com/devcontainers/java:17-bullseye
+    volumes:
+      - .:/workspace
+    networks:
+      - oauth2_network
+    depends_on:
+      - db

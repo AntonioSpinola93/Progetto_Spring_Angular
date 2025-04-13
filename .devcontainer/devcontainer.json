@@ -1,12 +1,18 @@
 {
-    "name": "My Java Project with PostgreSQL",
-    "dockerComposeFile": "./docker-compose.yml",
-    "service": "db",
-    "workspaceFolder": "/workspace",
-    "extensions": [
-      "ms-azuretools.vscode-docker",
-      "vscjava.vscode-spring-initializr"
-    ],
-    "postCreateCommand": "docker-compose up -d"
-  }
-  
+  "name": "My Java Project with PostgreSQL and Node.js",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "vscjava.vscode-spring-initializr",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  },
+  "postCreateCommand": "echo 'Dev container ready.'"
+}
