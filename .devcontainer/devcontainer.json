@@ -1,0 +1,12 @@
+{
+    "name": "My Java Project with PostgreSQL",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "db",
+    "workspaceFolder": "/workspace",
+    "extensions": [
+      "ms-azuretools.vscode-docker",
+      "vscjava.vscode-spring-initializr"
+    ],
+    "postCreateCommand": "docker-compose up -d"
+  }
+  

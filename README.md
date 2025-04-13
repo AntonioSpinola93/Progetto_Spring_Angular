@@ -16,3 +16,12 @@ npm install
 ng serve --port 8081
 ```
 @Tony Spinola @Alessandro Panareo
+
+
+
+Apri il progetto con DevContainer:
+
+Apri il progetto in VS Code.
+
+Vai su View > Command Palette > Remote-Containers: Reopen in Container.
+
