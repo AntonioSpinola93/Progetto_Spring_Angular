@@ -4,9 +4,21 @@
   "service": "dev",
   "workspaceFolder": "/workspace",
   "extensions": [
-    "vscjava.vscode-java-pack",
-    "ms-azuretools.vscode-docker",
-    "esbenp.prettier-vscode"
+ "vscjava.vscode-maven",
+				"vscjava.vscode-java-debug",
+				"vscjava.vscode-java-pack",
+				"dbaeumer.vscode-eslint",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"redhat.java",
+				"Pleiades.java-extension-pack-jdk",
+				"mhutchie.git-graph",
+				"cweijan.vscode-postgresql-client2",
+				"donjayamanne.githistory",
+				"zaaack.markdown-editor",
+				"jebbs.plantuml",
+				"qhoekman.language-plantuml",
+				"rangav.vscode-thunder-client"
   ],
   "settings": {
     "java.configuration.runtimes": [
@@ -17,5 +29,6 @@
       }
     ]
   },
-  "postCreateCommand": "echo 'Ambiente pronto!'"
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y curl && curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash - && sudo apt-get install -y nodejs && sudo npm install -g @angular/cli && echo 'Ambiente pronto!'"
+
 }
