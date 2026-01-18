@@ -18,6 +18,7 @@ import com.alessandro.spring.datajpa.repository.ContattoRepository;
 import com.alessandro.spring.datajpa.service.FiltriContatti;
 
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -80,5 +81,16 @@ public class ContattoController {
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
+  }
+
+  @PostMapping("/dynamic-form")
+  public ResponseEntity<String> handleDynamicFormSubmission(@RequestBody Map<String, Object> formData) {
+    // Process the dynamic form data
+    // Example: Log the received data
+    System.out.println("Received dynamic form data: " + formData);
+
+    // Add your logic to process and save the form data
+
+    return ResponseEntity.ok("Form data processed successfully");
   }
 }

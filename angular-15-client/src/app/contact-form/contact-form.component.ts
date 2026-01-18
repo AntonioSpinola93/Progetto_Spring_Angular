@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Contatto } from '../models/contatto.model';
 import { ContattiService } from '../services/contattiservice.service';
 
 @Component({
@@ -8,23 +7,32 @@ import { ContattiService } from '../services/contattiservice.service';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent {
-  contatto: Contatto = {
-    id: 0,
-    nome: '',
-    email: '',
-    telefono: '',
-    richiesta: '',
-    sesso: '',
-    dataDiNascita: '',
-    codiceFiscale: ''
-  };
+  contatto: any = {};
+  dynamicFields: any[] = [];
 
   constructor(private contattiService: ContattiService) {}
 
+  addField() {
+    this.dynamicFields.push({
+      label: 'New Field',
+      name: 'field' + this.dynamicFields.length,
+      type: 'text',
+      value: ''
+    });
+  }
+
+  removeField(index: number) {
+    this.dynamicFields.splice(index, 1);
+  }
+
   submitForm() {
-    this.contattiService.creaContatto(this.contatto)
+    const formData = {
+      ...this.contatto,
+      dynamicFields: this.dynamicFields
+    };
+    this.contattiService.creaContatto(formData)
       .subscribe(() => {
-        alert('Contatto salvato con successo!');
+        alert('Form submitted successfully!');
         this.resetForm();
       }, () => {
         alert('Errore durante il salvataggio del contatto. Riprova più tardi.');
@@ -32,15 +40,7 @@ export class ContactFormComponent {
   }
 
   resetForm() {
-    this.contatto = {
-      id: 0,
-      nome: '',
-      email: '',
-      telefono: '',
-      richiesta: '',
-      sesso: '',
-      dataDiNascita: '',
-      codiceFiscale: ''
-    };
+    this.contatto = {};
+    this.dynamicFields = [];
   }
 }

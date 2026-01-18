@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -11,14 +10,12 @@ import { LoginComponent } from './login/login.component';
 import { LogOutComponent } from './log-out/log-out.component';
 import { TextGenerationComponent } from './text-generation/text-generation.component';
 const routes: Routes = [
-{ path: '', redirectTo: 'tutorials', pathMatch: 'full' },
+{ path: '', redirectTo: 'contact-form', pathMatch: 'full' },
 { path: 'tutorials', component: TutorialsListComponent },
 { path: 'tutorials/:id', component: TutorialDetailsComponent },
 { path: 'add', component: AddTutorialComponent },
 { path: 'contact', component: ContactFormComponent },
 { path: 'requests', component: ContactListComponentComponent },
-{ path: 'login', component: LoginComponent }, // Aggiunto percorso per LoginComponent
-{ path: 'logout', component: LogOutComponent },
 { path: 'ChatGpt', component: TextGenerationComponent },
 ];
 
